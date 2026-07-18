@@ -14,7 +14,6 @@ services:
   - type: web
     name: rescuify-frontend
     env: static
-    plan: free
     repo: https://github.com/dev-anii/Rescuify-AI
     rootDir: frontend
     buildCommand: npm install && npm run build
