@@ -1,0 +1,29 @@
+services:
+  
+  - type: web
+    name: rescuify-backend
+    env: node
+    repo: https://github.com/dev-anii/Rescuify-AI
+    rootDirectory: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  
+  - type: web
+    name: rescuify-frontend
+    env: static
+    repo: https://github.com/dev-anii/Rescuify-AI
+    rootDirectory: frontend
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    routes:
+      
+      - type: rewrite
+        source: /api/*
+        destination: https://rescuify-backend.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
