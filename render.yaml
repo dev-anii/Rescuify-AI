@@ -2,6 +2,7 @@ services:
   - type: web
     name: rescuify-backend
     env: node
+    plan: free
     repo: https://github.com/dev-anii/Rescuify-AI
     rootDir: backend
     buildCommand: npm install
@@ -13,6 +14,7 @@ services:
   - type: web
     name: rescuify-frontend
     env: static
+    plan: free
     repo: https://github.com/dev-anii/Rescuify-AI
     rootDir: frontend
     buildCommand: npm install && npm run build
