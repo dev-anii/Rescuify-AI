@@ -10,13 +10,12 @@ services:
       - key: NODE_ENV
         value: production
 
-  - type: web
+  - type: static
     name: rescuify-frontend
-    env: static
     repo: https://github.com/dev-anii/Rescuify-AI
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishPath: dist
+    publishDir: dist
     routes:
       - type: rewrite
         source: /api/*
